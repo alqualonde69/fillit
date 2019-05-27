@@ -6,7 +6,7 @@
 /*   By: shunt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 21:52:49 by shunt             #+#    #+#             */
-/*   Updated: 2019/05/25 23:15:49 by shunt            ###   ########.fr       */
+/*   Updated: 2019/05/27 23:08:35 by shunt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 int		pst(t_flist *l, char **fld, int i, int j)
 {
-	if (i + l->i1 >= 0 && i + l->i2 >= 0 && i + l->i3 >= 0 &&
-			j + l->j1 >= 0 && j + l->j2 >= 0 && j + l->j3 >= 0 &&
-			i + l->i1 < 24 && i + l->i2 < 24 && i + l->i3 < 24 &&
-			j + l->j1 < 24 && j + l->j2 < 24 && j + l->j3 < 24 &&
-			fld[i + l->i1][j + l->j1] == '.' &&
-			fld[i + l->i2][j + l->j2] == '.' &&
-			fld[i + l->i3][j + l->j3] == '.')
+	if (i + l->c[0] >= 0 && i + l->c[2] >= 0 && i + l->c[4] >= 0 &&
+			j + l->c[1] >= 0 && j + l->c[3] >= 0 && j + l->c[5] >= 0 &&
+			i + l->c[0] < 24 && i + l->c[2] < 24 && i + l->c[4] < 24 &&
+			j + l->c[1] < 24 && j + l->c[3] < 24 && j + l->c[5] < 24 &&
+			fld[i + l->c[0]][j + l->c[1]] == '.' &&
+			fld[i + l->c[2]][j + l->c[3]] == '.' &&
+			fld[i + l->c[4]][j + l->c[5]] == '.')
 	{
 		fld[i][j] = l->letter;
-		fld[i + l->i1][j + l->j1] = l->letter;
-		fld[i + l->i2][j + l->j2] = l->letter;
-		fld[i + l->i3][j + l->j3] = l->letter;
+		fld[i + l->c[0]][j + l->c[1]] = l->letter;
+		fld[i + l->c[2]][j + l->c[3]] = l->letter;
+		fld[i + l->c[4]][j + l->c[5]] = l->letter;
 		return (1);
 	}
 	return (0);

@@ -21,7 +21,7 @@ int		strc(t_flist **fi, char **ttr, char l)
 		return (0);
 	new->letter = l;
 	new->next = NULL;
-	pth(&new, ttr);
+	path(ttr, -1, -1, &new);
 	if (!(*fi))
 		*fi = new;
 	else

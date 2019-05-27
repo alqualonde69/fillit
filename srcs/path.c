@@ -6,13 +6,13 @@
 /*   By: shunt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 21:50:14 by shunt             #+#    #+#             */
-/*   Updated: 2019/05/24 18:19:30 by shunt            ###   ########.fr       */
+/*   Updated: 2019/05/27 23:15:38 by shunt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		path(char **ttr, int i, int j)
+void	path(char **ttr, int i, int j, t_flist **n)
 {
 	int		x;
 	int		y;
@@ -20,21 +20,23 @@ int		path(char **ttr, int i, int j)
 
 	x = 0;
 	y = 0;
-	p = 0;
+	p = -1;
 	while (++i < 4)
 	{
 		j = -1;
 		while (++j < 4)
 		{
-			if (ttr[i][j] == '#' && !p)
+			if (ttr[i][j] == '#' && p == -1)
 			{
-				p = (x + 2) * 10 + (y + 2);
+				p = 0;
 				x = i;
 				y = j;
 			}
-			else if (ttr[i][j] == '#' && p)
-				p = (p * 10 + (i - x + 2)) * 10 + (j - y + 2);
+			else if (ttr[i][j] == '#' && p >= 0)
+			{
+				(*n)->c[p++] = i - x;
+				(*n)->c[p++] = j - y;
+			}
 		}
 	}
-	return (p);
 }

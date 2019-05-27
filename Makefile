@@ -6,7 +6,7 @@
 #    By: shunt <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/20 20:45:39 by shunt             #+#    #+#              #
-#    Updated: 2019/05/26 00:11:33 by shunt            ###   ########.fr        #
+#    Updated: 2019/05/27 23:03:08 by shunt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS = srcs/ans.c srcs/dots.c \
 	   srcs/fr_tf.c srcs/fr_ttr.c \
 	   srcs/frsh.c srcs/main.c srcs/nfi.c \
 	   srcs/ntr.c srcs/nttr.c srcs/path.c \
-	   srcs/prans.c srcs/pst.c srcs/pth.c \
+	   srcs/prans.c srcs/pst.c \
 	   srcs/strc.c srcs/valb.c srcs/valbuf.c \
 	   srcs/valf.c srcs/valsh.c srcs/error.c
 

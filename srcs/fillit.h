@@ -6,7 +6,7 @@
 /*   By: shunt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 15:50:06 by shunt             #+#    #+#             */
-/*   Updated: 2019/05/26 01:46:31 by shunt            ###   ########.fr       */
+/*   Updated: 2019/05/27 23:11:26 by shunt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,7 @@
 typedef struct		s_flist
 {
 	char			letter;
-	int				i1;
-	int				j1;
-	int				i2;
-	int				j2;
-	int				i3;
-	int				j3;
+	int				c[6];
 	struct s_flist	*next;
 }					t_flist;
 
@@ -64,9 +59,7 @@ char				**field(void);
 
 void				dots(char **fld, int d);
 
-int					path(char **ttr, int i, int j);
-
-void				pth(t_flist **fi, char **ttr);
+void				path(char **ttr, int i, int j, t_flist **n);
 
 int					pst(t_flist *l, char **fld, int i, int j);
 
